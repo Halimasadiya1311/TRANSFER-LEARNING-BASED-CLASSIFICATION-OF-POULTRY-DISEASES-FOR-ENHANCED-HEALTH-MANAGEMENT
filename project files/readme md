@@ -1,1 +1,28 @@
 project executable files 
+ Dictionary of poultry diseases with categories
+poultry_diseases = {
+    "Newcastle Disease": {"Etiology": "Viral", "System": "Respiratory", "Severity": "Acute"},
+    "Coccidiosis": {"Etiology": "Parasitic", "System": "Digestive", "Severity": "Acute"},
+    "Marek’s Disease": {"Etiology": "Viral", "System": "Nervous", "Severity": "Chronic"},
+    "Fowl Cholera": {"Etiology": "Bacterial", "System": "Respiratory", "Severity": "Acute"},
+    "Aspergillosis": {"Etiology": "Fungal", "System": "Respiratory", "Severity": "Chronic"},
+}
+
+# Function to classify by any parameter
+def classify_by(category):
+    classification = {}
+    for disease, attrs in poultry_diseases.items():
+        key = attrs[category]
+        if key not in classification:
+            classification[key] = []
+        classification[key].append(disease)
+    return classification
+
+# Example: Classify by Etiology
+etiology_classification = classify_by("Etiology")
+
+# Display classification
+for etiology, diseases in etiology_classification.items():
+    print(f"\n{etiology} Diseases:")
+    for d in diseases:
+        print(f" - {d}")
