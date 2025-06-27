@@ -1,0 +1,4 @@
+filename,label
+chicken_01.jpg,Newcastle
+chicken_02.jpg,Healthy
+...
