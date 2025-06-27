@@ -1,0 +1,41 @@
+poultry_disease_classifier/
+│
+├── data/
+│   ├── raw/                # Original raw images and metadata
+│   ├── processed/          # Preprocessed and resized images
+│   ├── annotations/        # Label files or CSVs
+│   ├── augmented/          # Augmented images
+│   └── test_samples/       # Test images for manual testing
+│
+├── notebooks/
+│   ├── 01_data_preprocessing.ipynb
+│   ├── 02_model_training.ipynb
+│   ├── 03_evaluation.ipynb
+│   └── 04_tflite_conversion.ipynb   # Optional for edge deployment
+│
+├── models/
+│   ├── saved_model/        # Final trained model (SavedModel format)
+│   ├── tflite/             # Converted model for mobile/IoT
+│   └── checkpoints/        # During training (optional)
+│
+├── src/
+│   ├── __init__.py
+│   ├── config.py           # Model, path, and training config
+│   ├── data_loader.py      # Functions for loading/preprocessing data
+│   ├── model_builder.py    # Load pre-trained models + new classifier
+│   ├── train.py            # Main training loop
+│   ├── evaluate.py         # Model evaluation and confusion matrix
+│   └── utils.py            # Helper functions (e.g., metrics, visualizations)
+│
+├── app/                    # Web/Edge Deployment App
+│   ├── main.py             # Flask/FastAPI app
+│   ├── templates/
+│   │   └── index.html      # Web UI
+│   ├── static/
+│   │   └── css/, js/, img/ # Assets
+│   └── api_handler.py      # Prediction API logic
+│
+├── requirements.txt        # All required Python packages
+├── README.md               # Project overview and setup instructions
+├── LICENSE
+└── .gitignore
